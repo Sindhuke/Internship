@@ -1,1 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sindhu Ekabote | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  html{
+    scroll-behavior:smooth;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#0f172a;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+nav h2{
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:30px;
+}
+
+nav ul li a{
+    color:#fff;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+/* HOME SECTION */
+.home{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:150px 8%;
+    flex-wrap:wrap;
+}
+
+.home-text{
+    max-width:600px;
+}
+
+.home-text h1{
+    font-size:45px;
+}
+
+.home-text span{
+    color:#38bdf8;
+}
+
+.home-text p{
+    margin:20px 0;
+    line-height:1.6;
+    color:#cbd5e1;
+}
+
+.btn{
+    padding:10px 25px;
+    background:#38bdf8;
+    border:none;
+    color:#000;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#0ea5e9;
+}
+
+/* PROFILE IMAGE */
+.profile{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    overflow:hidden;
+    position:relative;
+}
+
+.profile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.profile::before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    padding:8px;
+    background:linear-gradient(45deg,#38bdf8,#9333ea,#f43f5e);
+    animation:rotate 5s linear infinite;
+    z-index:-1;
+}
+
+@keyframes rotate{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+/* SECTIONS */
+section{
+    padding:80px 8%;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:#38bdf8;
+}
+
+.skills-list{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.skill{
+    background:#1e293b;
+    padding:20px 40px;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.skill:hover{
+    background:#38bdf8;
+    color:#000;
+}
+
+.projects{
+    max-width:800px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+
+.project-card{
+    padding:15px 0;
+    border-bottom:1px solid #334155;
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.6s ease;
+}
+
+/* animation visible */
+.project-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.project-card h3{
+    color:#38bdf8;
+    margin-bottom:5px;
+}
+
+.project-card p{
+    color:#cbd5e1;
+}
+
+.contact{
+    text-align:center;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#1e293b;
+    margin-top:50px;
+    color:#94a3b8;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .home{
+        flex-direction:column;
+        text-align:center;
+    }
+    .profile{
+        margin-top:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Sindhu.</h2>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="home">
+    <div class="home-text">
+        <h1>Hello, I'm <span>Sindhu Ekabote</span></h1>
+        <h3>Computer Science Engineering Student</h3>
+        <p>
+            Motivated and passionate Computer Science Engineering student with strong foundation in programming and web development.
+            Seeking opportunities to apply technical skills in real-world projects and contribute to innovative solutions in software and machine learning domains.
+        </p>
+        <button class="btn">Download Resume</button>
+    </div>
+
+    <div class="profile">
+      <img src="sindhu.jpeg" alt="Profile">
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p style="text-align:center; max-width:800px; margin:auto; color:#cbd5e1;">
+        I am currently pursuing BE in Computer Science Engineering. I have completed a diploma project on Secure Health Care Management System.
+        In my BE, I developed Parkinson’s Disease Detection using Machine Learning and my final year project AstroDefend –
+        an ML-based warning system for hazardous asteroids.
+        Currently working as an AI intern at Wizzybox, gaining practical industry experience.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-list">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Python</div>
+        <div class="skill">MySQL</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+
+        <div class="project-card">
+            <h3>Secure Health Care Management</h3>
+            <p>Developed a secure web-based healthcare management system during diploma. The system encrypts patient medical records to ensure data privacy and confidentiality.
+                Implemented authentication mechanisms so that only authorized doctors and administrators
+                can access sensitive patient information. Focused on secure data storage, role-based access control,
+                and protection against unauthorized access.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Parkinson’s Disease Detection</h3>
+            <p>Built a Machine Learning model to detect Parkinson’s Disease using biomedical voice dataset
+                collected from Kaggle. Performed data preprocessing, feature selection, and model training.
+                Implemented and compared multiple ML algorithms such as Logistic Regression, Random Forest, and Support Vector Machine (SVM) to improve prediction accuracy.
+                Evaluated model performance using accuracy and confusion matrix metrics.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>AstroDefend</h3>
+            <p>Designed and developed AstroDefend, an intelligent Machine Learning-based early warning system
+                to identify potentially hazardous asteroids. The system analyzes asteroid parameters such as
+                size, velocity, distance from Earth, and orbital characteristics to predict risk levels.
+                Implemented data analysis, model training, and risk classification to provide early alerts for possible asteroid threats. Focused on predictive analytics and real-world
+                space safety applications.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact">
+        <p>Email: sindhuekabote97@gmail.com</p>
+        <p>Intern at Wizzybox</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Sindhu Ekabote | All Rights Reserved
+</footer>
+<script>
+const cards = document.querySelectorAll('.project-card');
+
+function showOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+
+        if(cardTop < triggerBottom){
+            card.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', showOnScroll);
+showOnScroll();
+</script>
+
+</body>
+</html>
 
